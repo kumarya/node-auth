@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const mongoose = require("mongoose")
+const cors = require("cors")
 
 //mongodb://info:zxc123@ds141490.mlab.com:41490/react
 
@@ -13,6 +14,7 @@ mongoose.connect('mongodb://info:zxc123@ds141490.mlab.com:41490/react')
 
 
 app.use(morgan('combined'))
+app.use(cors())
 
 app.use(bodyParser.json({type:'*/*'}))
 
